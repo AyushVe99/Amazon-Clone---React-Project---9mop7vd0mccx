@@ -1,27 +1,105 @@
-.home__image{
-    width: 100%;
-    z-index: -1;
-    margin-bottom: -150px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+.home__container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }
-.home {
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1550px;
-  }
-  
-  .home__row {
-    display: flex;
-    background-color: aqua;
-    flex-direction: row;
-    flex-wrap: wrap;
-    z-index: 1;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  @media only screen and(max-width:1024px)
-  {
-  
-  }
+
+.home__image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.category__buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.category__button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 20px;
+  background-color: #e0e0e0;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category__button:hover,
+.category__button.active {
+  background-color: #ffa41c;
+  color: #fff;
+}
+
+.home__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px;
+  padding: 20px;
+  width: 250px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+  max-height: 180px;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.product__title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.product__price {
+  font-size: 18px;
+  color: #B12704;
+  font-weight: bold;
+}
+
+.product__rating {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.product > button {
+  background-color: #f0c14b;
+  border: 1px solid #a88734;
+  color: #111;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product > button:hover {
+  background-color: #ddb347;
+}
