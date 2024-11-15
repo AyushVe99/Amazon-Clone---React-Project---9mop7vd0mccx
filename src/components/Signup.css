@@ -60,9 +60,20 @@
 }
 
 .Signup_Checkbox {
-    align-self: flex-start;
-    margin-top: 10px;
-    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+.Signup_container form .Signup_Checkbox input[type="checkbox"] {
+    height: auto;
+    width: auto;
+    margin: 0;
+}
+
+.Signup_container form .Signup_Checkbox > label {
+    margin: 0;
 }
 
 
