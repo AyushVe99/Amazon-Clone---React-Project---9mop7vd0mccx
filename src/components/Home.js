@@ -56,7 +56,7 @@ function Home() {
         </div>
         <div className="home__card">
           <div className="home__row">
-            {filteredProducts.map(product => (
+            {filteredProducts?.map(product => (
               <Product
                 key={product.id}
                 id={product.id}

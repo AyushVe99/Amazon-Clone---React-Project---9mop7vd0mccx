@@ -3,6 +3,7 @@ import './Product.css'
 import { useStateValue } from './StateProvider'
 function Product({id, title, image,price,rating}) {
 const [{basket},dispatch]=useStateValue();
+const [itemCount,setItemCount]=React.useState(0)
     const addToBasket=()=>{
     dispatch({
         type: 'ADD_TO_BASKET',
@@ -14,7 +15,20 @@ const [{basket},dispatch]=useStateValue();
             rating:rating,
         },
     });
+    setItemCount(itemCount+1);
    }
+   const removeFromBasket = () => {
+    if(itemCount>0)
+      {
+        dispatch({
+          type: 'REMOVE_FROM_BASKET',
+          id: id,
+        });
+        setItemCount(itemCount-1);
+      }
+      
+    
+  };
     return (
     <div className="product">
       <img src={image} alt="" />
@@ -42,9 +56,13 @@ const [{basket},dispatch]=useStateValue();
       </div>
     </div>
 
-    
+    <div className="product__quantity">
+        <button onClick={removeFromBasket}>-</button>
+        <span>{itemCount}</span>
+        <button onClick={addToBasket}>+</button>
+      </div>
 
-    <button onClick={addToBasket}>Add to Cart</button>
+    {/* <button onClick={addToBasket}>Add to Cart</button> */}
   </div>
   )
 }

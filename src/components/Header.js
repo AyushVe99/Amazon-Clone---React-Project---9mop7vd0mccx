@@ -8,11 +8,14 @@ import { useStateValue } from './StateProvider';
 function Header() {
 
   const[{basket,user}]=useStateValue();
+  const [searchData,setSearchData]=React.useState("")
   const login=()=>{
     if(user){
       auth.signOut();
     }
   }
+ 
+  console.log(basket);
   const loggedUser=JSON.parse(localStorage.getItem("loginDetails"));
   return (
     <nav className='header'>
@@ -22,7 +25,11 @@ function Header() {
         </Link>
         {/* Search Bar */}
         <div className='header_search'>
-        <input type="text"  className="header_searchInput" placeholder='Search'/>
+        <input type="text"  className="header_searchInput" placeholder='Search'
+        onChange={(e)=>{
+          setSearchData(e.target.value)
+        }}
+        />
          <SearchIcon className='header_searchIcon'/>
          </div>
         {/* 3 Links */}
